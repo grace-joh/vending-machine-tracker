@@ -32,4 +32,8 @@ RSpec.describe 'When a user visits a vending machine show page', type: :feature 
       expect(page).to_not have_content("* #{@snack4.name}: $#{format('%.2f', @snack4.price)}")
     end
   end
+
+  scenario 'they see an average price for all of the snacks in that machine' do
+    expect(page).to have_content("Average Price: $#{@dons.average_snack_price}")
+  end
 end
