@@ -7,4 +7,4 @@
   <% end %>
 </div>
 
-<p>Average Price: $<%= @machine.average_snack_price %>
+<p>Average Price: $<%= format('%.2f', @machine.average_snack_price) %>

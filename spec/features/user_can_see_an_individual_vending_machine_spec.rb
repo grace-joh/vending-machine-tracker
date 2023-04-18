@@ -7,7 +7,7 @@ RSpec.describe 'When a user visits a vending machine show page', type: :feature 
     @mikes  = @owner.machines.create!(location: "Mike's Hot Chicken")
 
     @snack1 = Snack.create!(name: 'White Castle Burger', price: 3.50)
-    @snack2 = Snack.create!(name: 'Pop Rocks', price: 1.502312)
+    @snack2 = Snack.create!(name: 'Pop Rocks', price: 1.5)
     @snack3 = Snack.create!(name: 'Flaming Hot Cheetos', price: 2.5)
     @snack4 = Snack.create!(name: 'Trail Mix', price: 1.00)
 
@@ -34,6 +34,6 @@ RSpec.describe 'When a user visits a vending machine show page', type: :feature 
   end
 
   scenario 'they see an average price for all of the snacks in that machine' do
-    expect(page).to have_content("Average Price: $#{@dons.average_snack_price}")
+    expect(page).to have_content("Average Price: $#{format('%.2f', @dons.average_snack_price)}")
   end
 end
