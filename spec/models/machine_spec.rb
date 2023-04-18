@@ -31,8 +31,13 @@ RSpec.describe Machine, type: :model do
 
       it 'returns average price of all snacks in the machine' do
         average = ((@snack1.price + @snack2.price + @snack3.price) / 3).round(2)
-    
+
         expect(@dons.average_snack_price).to eq(average)
+      end
+
+      it 'returns average price of all snacks in the machine' do
+        expect(@dons.snack_count).to eq(3)
+        expect(@mikes.snack_count).to eq(1)
       end
     end
   end
